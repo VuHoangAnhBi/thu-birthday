@@ -235,7 +235,7 @@ footer .me {
     }
     
     body {
-        background: url(../images/bgc.png) no-repeat;
+        background: url(./images/bgc.png) no-repeat;
         background-size: cover;
         position: relative;
     }
