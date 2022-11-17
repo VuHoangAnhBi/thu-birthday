@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+.tab {
+    tab-size: 4;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -17,6 +21,14 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 20px;
+    position: relative;
+}
+
+header {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color:white
 }
 
 .container{
@@ -229,6 +241,58 @@ footer .me {
     opacity: 1;
 }
 
+/* more */
+
+.more-options {
+    margin: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.more-icon {
+    border-radius: 10px;
+    transition: all 0.1s linear;
+    width: 40px;
+    height: 40px;
+    margin: 10px 20px;
+}
+
+.more-icon:hover {
+    cursor: pointer;
+    /* opacity: 0.5; */
+    box-shadow: 0px 0px 30px white;
+}
+
+.children {
+    padding: 2px;
+    box-shadow: 0 0 4px black;
+    margin: 4px 0;
+    display: none
+}
+
+.children .item {
+    padding: 2px;
+    background-color: white;
+    margin: 4px 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.item:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1000px) {
     body  * {
         visibility: hidden;
@@ -243,11 +307,76 @@ footer .me {
     body::after {
         content: 'Anh lười chỉnh quá nên chịu khó chuyển sang laptop nhìn cho đẹp hơn nhé :"))';
         position: absolute;
-        top: 50%;
+        top: 30%;
         left: 50%;
         transform: translate(-50%);
         font-size: 32px;
         color: white;
         font-weight: bold;
     }
+}
+
+/* extends */
+
+.show-icon {
+    display: inline-block;
+}
+
+
+/* modal */
+
+.modals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('./images/bgc.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modals > div {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+}
+
+.modals button {
+    font-size: 32px;
+    background-color: rgb(123, 222, 255);
+    border-radius: 10px;
+    margin: 4px;
+    padding: 4px;
+    transition: all 0.2s linear;
+}
+
+.modals button:hover {
+    cursor: pointer;
+    background-color: #ccc;
+}
+.modals .wish,.modals .love {
+    max-width: 80%;
+    max-height: 70%;
+}
+
+.modals .wish h1, .modals .love h1 {
+    text-align: center;
+}
+
+.modals .wish p, .modals .love p {
+    font-size: 26px;
+}
+
+.modals .love .pasal {
+    width: 100%;
+    max-height: 80%;
+    overflow-y: scroll;
 }
