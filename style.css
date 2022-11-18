@@ -11,16 +11,30 @@
     tab-size: 4;
 }
 
-::-webkit-scrollbar {
-  display: none;
+body::-webkit-scrollbar {
+    display:none;
 }
+
+/* html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: px;
+    background-color: rgb(115, 113, 113);
+}
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: white;
+} */
 
 body{
     background: linear-gradient(rgba(98, 18, 141, 0.5),rgba(78, 27, 27, 0.5));
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     position: relative;
 }
 
@@ -194,7 +208,7 @@ header {
     justify-content: space-around;
     align-items: center;
     /* flex-wrap: wrap; */
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
 }
 
 video {
@@ -202,16 +216,28 @@ video {
 }
 
 .videos-container .item {
-    width: 300px;
-    height: 550px;
+    width: calc(100%/5 - 30px);
     background-color: black;
     border-radius: 40px;
     overflow: hidden;
     transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .videos-container .item:hover {
     box-shadow: 4px 4px 100px white;
+}
+
+.videos-container .item .message {
+    font-weight: bold;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
 }
 
 footer {
@@ -379,4 +405,22 @@ footer .me {
     width: 100%;
     max-height: 80%;
     overflow-y: scroll;
+}
+
+.modals .wish::-webkit-scrollbar,
+.modals .love::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+.modals .wish::-webkit-scrollbar-thumb,
+.modals .love::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    width: 8px;
+}
+
+.modals .wish::-webkit-scrollbar-track,
+.modals .love::-webkit-scrollbar-track {
+    border-radius: 0;
+    width: 8px;
 }
